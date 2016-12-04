@@ -73,7 +73,7 @@ public class NewWebService {
                     LoanResponse res = unmarchal(bodyString);
                     String receivedSsn = res.getSsn();
                     if (!receivedSsn.contains("-")) {
-                        receivedSsn = receivedSsn.substring(0, 4) + "-" + receivedSsn.substring(4);
+                        receivedSsn = receivedSsn.substring(0, 6) + "-" + receivedSsn.substring(6);
                     }
                     CustomerResponse response = new CustomerResponse(receivedSsn, res.getInterestRate(), bankName);
                     responseToCustomer = marshal(response);
